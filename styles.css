@@ -1,9 +1,21 @@
 /* http://alijafarian.com/responsive-image-grids-using-css/ */
+/*
+http://paletton.com/#uid=13K0u0k00m601Dv00rF01gF0saq
+#373737
+#595959
+#767676
+#939393
+#C1C1C1
+*/
+
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+@import url('https://fonts.googleapis.com/css?family=Arvo');
 
 html {
-    background-color: silver;
+    background-color: #C1C1C1;
+    font-family: Arvo;
 }
 
 html, body {
@@ -11,14 +23,15 @@ html, body {
 }
 
 header {
-    background-color: black;
+    background-color: #373737;
     color: white;
     overflow: auto;
+    box-shadow: 0 3px 3px #939393;
 }
 
 header .logo {
     float: left;
-    padding: 2px 0;
+    padding: 4px 0;
     margin-left: 1em;
     font-size: 19px;
     font-size: 1.2rem;
@@ -27,15 +40,15 @@ header .logo {
 header nav {
     float: right;
     font-size: 0;
-    margin-right: 1rem;
-    border-right: 1px solid silver;
+    margin-right: 2rem;
+    border-right: 1px solid #767676;
 }
 
 header nav a {
     display: inline-block;
-    padding: 2px 4px;
-    border-left: 1px solid silver;
-    background-color: gray;
+    padding: 4px 12px;
+    border-left: 1px solid #767676;
+    background-color: #595959;
     font-size: 19px;
     font-size: 1.2rem;
     color: white;
@@ -72,10 +85,21 @@ h1, h2, h3, h4, h5, h6 {
 
     background-color: white;
     padding: 10px;
+    box-shadow: 3px 3px 3px #939393;
+    transition: transform 200ms, box-shadow 200ms;
+}
+
+.cards a:hover {
+    transform: scale(1.02);
+    box-shadow: 5px 5px 3px #939393;
 }
 
 .cards a img {
     max-width: 100%;
+}
+
+.cards a p {
+    color: #595959;
 }
 
 @media (max-width: 480px) {

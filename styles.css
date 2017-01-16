@@ -1,0 +1,104 @@
+/* http://alijafarian.com/responsive-image-grids-using-css/ */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html {
+    background-color: silver;
+}
+
+html, body {
+    margin: 0;
+}
+
+header {
+    background-color: black;
+    color: white;
+    overflow: auto;
+}
+
+header .logo {
+    float: left;
+    padding: 2px 0;
+    margin-left: 1em;
+    font-size: 19px;
+    font-size: 1.2rem;
+}
+
+header nav {
+    float: right;
+    font-size: 0;
+    margin-right: 1rem;
+    border-right: 1px solid silver;
+}
+
+header nav a {
+    display: inline-block;
+    padding: 2px 4px;
+    border-left: 1px solid silver;
+    background-color: gray;
+    font-size: 19px;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+}
+
+.wrapper {
+    margin: 1em 5% 1em;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.cards {
+    font-size: 0px;
+    margin-left: -2.5%; /* should match li left margin */
+}
+
+.cards a {
+    text-decoration: none;
+    color: black;
+
+    display: inline-block;
+    margin: 0 0 2.5% 2.5%;
+    width: 47.5%; /* 2 columns */
+    box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+    font-size: 16px;
+    font-size: 1rem;
+    vertical-align: top;
+
+    background-color: white;
+    padding: 10px;
+}
+
+.cards a img {
+    max-width: 100%;
+}
+
+@media (max-width: 480px) {
+    /* 1 column */
+    .cards {
+        margin-left: 0;
+    }
+
+    .cards a {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 1000px) {
+    .cards a {
+        width: 30.83%; /* 3 columns */
+    }
+}
+
+@media (min-width: 1500px) {
+    html .cards a {
+        width: 22.5%; /* 4 columns */
+    }
+}

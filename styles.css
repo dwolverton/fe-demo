@@ -13,13 +13,14 @@ http://paletton.com/#uid=13K0u0k00m601Dv00rF01gF0saq
 @import url('https://fonts.googleapis.com/css?family=Bitter');
 @import url('https://fonts.googleapis.com/css?family=Arvo');
 
-html {
-    background-color: #C1C1C1;
-    font-family: Arvo;
-}
-
 html, body {
     margin: 0;
+    font-size: 14px;
+}
+
+body {
+    font-family: Arvo;
+    background-color: #C1C1C1;
 }
 
 header {
@@ -69,36 +70,37 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: -2.5%; /* should match li left margin */
 }
 
-.cards a {
-    text-decoration: none;
-    color: black;
-
+.cards .card {
     display: inline-block;
     margin: 0 0 2.5% 2.5%;
     width: 47.5%; /* 2 columns */
     box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-    font-size: 16px;
-    font-size: 1rem;
-    vertical-align: top;
+}
 
+a.card {
+    text-decoration: none;
+    color: black;
     background-color: white;
     padding: 10px;
     box-shadow: 3px 3px 3px #939393;
+    vertical-align: top;
+    font-size: 16px;
+    font-size: 1rem;
     transition: transform 200ms, box-shadow 200ms;
 }
 
-.cards a:hover {
+.card:hover {
     transform: scale(1.02);
     box-shadow: 5px 5px 3px #939393;
 }
 
-.cards a img {
+.card img {
     max-width: 100%;
 }
 
-.cards a p {
+.card p {
     color: #595959;
 }
 
@@ -108,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
         margin-left: 0;
     }
 
-    .cards a {
+    .cards .card {
         display: block;
         width: 100%;
         margin-left: 0;
@@ -116,13 +118,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 1000px) {
-    .cards a {
+    .cards .card {
         width: 30.83%; /* 3 columns */
     }
 }
 
 @media (min-width: 1500px) {
-    html .cards a {
+    html .cards .card {
         width: 22.5%; /* 4 columns */
     }
+}
+
+/* Bootstrap */
+html.bootstrap h1 {
+    font-size: 2em;
+}
+
+.card {
+    display: block;
+}
+
+html.bootstrap .row {
+    margin-bottom: 30px;
 }

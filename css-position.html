@@ -80,6 +80,14 @@
             color: cornflowerblue;
             border: 1px dashed cornflowerblue;
         }
+
+        .container {
+            float: left;
+            padding: 0 1em 1em;
+        }
+        form {
+            clear: both;
+        }
     </style>
 </head>
 <body ng-app>
@@ -94,12 +102,12 @@
     <div class="wrapper">
         <h1>CSS Positioning Demo</h1>
         <article>
-            <div class="container-static">
+            <div class="container container-static">
                 <h2>container with default position</h2>
                 Choose the CSS position for <span ng-class="position" ng-style="applyOffset ? {top: offset + 'px', left: 2 * offset + 'px'} : {}">this span</span>.
                 This first <em>container</em> is default position (i.e. static).
             </div>
-            <div class="container-relative">
+            <div class="container container-relative">
                 <h2>container with <em>relative</em> position</h2>
                 The CSS position will also be applied <span ng-class="position" ng-style="applyOffset ? {top: 2 * offset + 'px', left: offset + 'px'} : {}">this other span</span>.
                 This second <em>container</em> is relative position. You can see how

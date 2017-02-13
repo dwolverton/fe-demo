@@ -145,3 +145,10 @@ html.bootstrap h1 {
 html.bootstrap .row {
     margin-bottom: 30px;
 }
+
+/* Article Content */
+
+article.content {
+    background-color: white;
+    padding: 2.5%;
+}

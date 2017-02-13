@@ -7,14 +7,13 @@
 -->
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>CSS Position</title>
     <link rel="stylesheet" href="styles.css"/>
     <style type="text/css">
-        article {
-            background-color: white;
-            padding: 2.5%;
-        }
-
         .static {
             position: static;
         }
@@ -94,14 +93,14 @@
     <header>
         <div class="logo">David's Demo</div>
         <nav>
-            <a href="index.html">Cards</a>
+            <a href="index.html">Home</a>
             <a href="bootstrap.html">Bootstrap</a>
             <a href="#">Stuffs</a>
         </nav>
     </header>
     <div class="wrapper">
         <h1>CSS Positioning Demo</h1>
-        <article>
+        <article class="content">
             <div class="container container-static">
                 <h2>container with default position</h2>
                 Choose the CSS position for <span ng-class="position" ng-style="applyOffset ? {top: offset + 'px', left: 2 * offset + 'px'} : {}">this span</span>.

@@ -21,6 +21,7 @@ html, body {
 body {
     font-family: Arvo;
     background-color: #C1C1C1;
+    background: linear-gradient(#C1C1C1, #E1E1E1);
 }
 
 header {
@@ -109,6 +110,25 @@ a.card {
 }
 
 @media (max-width: 480px) {
+    /* Hide all but the first nav item */
+    header nav a {
+        display:none;
+    }
+    header nav a:first-child {
+        display:inline-block;
+    }
+
+    /* Remove the margin on the sides of the page */
+    .wrapper {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    h1 {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
     /* 1 column */
     .cards {
         margin-left: 0;
@@ -118,6 +138,12 @@ a.card {
         display: block;
         width: 100%;
         margin-left: 0;
+    }
+
+    /* Disable card grow on hover */
+    .card:hover {
+        transform: scale(1);
+        box-shadow: 3px 3px 3px #939393;
     }
 }
 

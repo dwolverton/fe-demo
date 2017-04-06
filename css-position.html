@@ -154,8 +154,11 @@
                         <label><input type="range" name="offset" ng-model="offset" min="-50" max="50" value="0" ng-disabled="!applyOffset"> offset: {{offset}}</label>
                         Use this to modify the 'top' and 'left' CSS properties.
                     </p>
-<pre>left: {{applyOffset ? offset + 'px' : 'auto'}};
-top: {{applyOffset ? offset + 'px' : 'auto'}};</pre>
+<pre>{
+    position: {{position}};
+    left: {{applyOffset ? offset + 'px' : 'auto'}};
+    top: {{applyOffset ? offset + 'px' : 'auto'}};
+}</pre>
                 </fieldset>
             </form>
             <p class="spacing">I'm</p>

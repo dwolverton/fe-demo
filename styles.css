@@ -168,7 +168,7 @@ html.bootstrap h1 {
     display: block;
 }
 
-html.bootstrap .row {
+html.bootstrap .row > div {
     margin-bottom: 30px;
 }
 

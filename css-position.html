@@ -88,6 +88,9 @@
         form {
             clear: both;
         }
+        input[type=range] {
+            width: 200px;
+        }
     </style>
 </head>
 <body ng-app>
@@ -104,12 +107,12 @@
         <article class="content">
             <div class="container container-static">
                 <h2>container with default position</h2>
-                Choose the CSS position for <span ng-class="position" ng-style="applyOffset ? {top: 2 * offset + 'px', left: 4 * offset + 'px'} : {}">this span</span>.
+                Choose the CSS position for <span ng-class="position" ng-style="applyOffset ? {top: offset + 'px', left: 2 * offset + 'px'} : {}">this span</span>.
                 This first <em>container</em> is default position (i.e. static).
             </div>
             <div class="container container-relative">
                 <h2>container with <em>relative</em> position</h2>
-                The CSS position will also be applied <span ng-class="position" ng-style="applyOffset ? {top: 4 * offset + 'px', left: 2 * offset + 'px'} : {}">this other span</span>.
+                The CSS position will also be applied <span ng-class="position" ng-style="applyOffset ? {top: 2 * offset + 'px', left: offset + 'px'} : {}">this other span</span>.
                 This second <em>container</em> is relative position. You can see how
                 this affects the span's position in some cases.
             </div>
@@ -152,7 +155,7 @@
                         It also makes a difference whether or not you specify top and left at all. Check this box to set top and left.
                     </p>
                     <p>
-                        <label><input type="range" name="offset" ng-model="offset" min="-50" max="50" value="0" ng-disabled="!applyOffset"> offset: {{offset}}</label>
+                        <label><input type="range" name="offset" ng-model="offset" min="-100" max="100" step="5" value="0" ng-disabled="!applyOffset"> offset: {{offset}}</label>
                         Use this to modify the 'top' and 'left' CSS properties.
                     </p>
 <pre>{

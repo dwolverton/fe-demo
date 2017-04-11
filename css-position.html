@@ -52,7 +52,8 @@
         }
         span {
             padding: 0 .1em;
-            background-color: rgba(255, 255, 255, .7);
+            background-color: rgba(255, 255, 255, .8);
+            font-size: 150%;
         }
         span.absolute, span.fixed {
             box-shadow: 2px 2px 5px #888888;
@@ -103,12 +104,12 @@
         <article class="content">
             <div class="container container-static">
                 <h2>container with default position</h2>
-                Choose the CSS position for <span ng-class="position" ng-style="applyOffset ? {top: offset + 'px', left: 2 * offset + 'px'} : {}">this span</span>.
+                Choose the CSS position for <span ng-class="position" ng-style="applyOffset ? {top: 2 * offset + 'px', left: 4 * offset + 'px'} : {}">this span</span>.
                 This first <em>container</em> is default position (i.e. static).
             </div>
             <div class="container container-relative">
                 <h2>container with <em>relative</em> position</h2>
-                The CSS position will also be applied <span ng-class="position" ng-style="applyOffset ? {top: 2 * offset + 'px', left: offset + 'px'} : {}">this other span</span>.
+                The CSS position will also be applied <span ng-class="position" ng-style="applyOffset ? {top: 4 * offset + 'px', left: 2 * offset + 'px'} : {}">this other span</span>.
                 This second <em>container</em> is relative position. You can see how
                 this affects the span's position in some cases.
             </div>
@@ -156,8 +157,8 @@
                     </p>
 <pre>{
     position: {{position}};
-    left: {{applyOffset ? offset + 'px' : 'auto'}};
-    top: {{applyOffset ? offset + 'px' : 'auto'}};
+    left: {{applyOffset ? offset + 'px' : 'auto  /* default - no left */'}};
+    top: {{applyOffset ? offset + 'px' : 'auto  /* default - no top */'}};
 }</pre>
                 </fieldset>
             </form>

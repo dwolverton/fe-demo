@@ -5,21 +5,17 @@
 */
 
 function forNoobs() {
-    // Draw a Tree
     drawCircle(0, -20, 20);
     drawRectangle(-5, 0, 10, 30);
 
-    // Draw a House
     drawRectangle(-110, 0, 60, 40);
     drawLine(-118, 4, -80, -25);
     drawLine(-42, 4, -80, -25);
     drawRectangle(-78, 15, 15, 25);
 
-    // Draw another Tree
     drawCircle(30, -15, 20);
     drawRectangle(25, 5, 10, 30);
 
-    // Draw another Tree
     drawCircle(-25, -17, 20);
     drawRectangle(-30, 3, 10, 30);
 }

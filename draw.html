@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+  This is the kickoff example for functions. It can be used to illustrate two main purposes of functions...
+  1) reusability - 3 trees. what if we want to draw another house?
+  2) abstraction - which is easer to read?
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Demo Site</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <style>
+        #canvas {
+            background-color: white;
+        }
+        #pos {
+            position: absolute;
+            margin: 2px 0 0 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">David's Demo</div>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <h1>Draw Functions Demo</h1>
+        <article>
+            <p>Open the dev tools. Go to the <em>sources</em> tab. Then check out <em>draw.js</em>. You can also run functions from the console.</p>
+            <ul>
+                <li>Click on the Canvas to see X/Y coordinates</li>
+                <li>Use these functions to add shapes
+                    <ul>
+                        <li><code>drawRectangle(topX, topY, width, height)</code></li>
+                        <li><code>drawLine(startX, startY, endX, endY)</code></li>
+                        <li><code>drawCircle(centerX, centerY, radius)</code></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p id="pos">Hello! This white box is the canvas.</p>
+            <canvas id="canvas" width="800" height="600"
+            style="border:1px solid #c3c3c3;"
+            onclick="document.getElementById('pos').innerHTML = 'X: ' + (event.offsetX - X_CENTER ) + ' Y: ' + (event.offsetY - Y_CENTER) + ' ';">
+            Your browser does not support the canvas element.
+            </canvas>
+
+        </article>
+    </div> <!--/.wrapper-->
+
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.lineWidth = 2;
+        var X_CENTER = 400, Y_CENTER = 300;
+
+        function drawRectangle(topX, topY, width, height) {
+            ctx.strokeRect(topX + X_CENTER, topY + Y_CENTER, width, height);
+        }
+
+        function drawLine(startX, startY, endX, endY) {
+            ctx.moveTo(startX + X_CENTER, startY + Y_CENTER);
+            ctx.lineTo(endX + X_CENTER, endY + Y_CENTER);
+            ctx.stroke();
+        }
+
+        function drawCircle(centerX, centerY, radius) {
+            ctx.beginPath();
+            ctx.arc(centerX + X_CENTER, centerY + Y_CENTER, radius, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+
+        console.log("Here are the drawing functions you can use...\n\n" +
+                    " drawRectangle(topX, topY, width, height)\n" +
+                    " drawLine(startX, startY, endX, endY)\n" +
+                    " drawCircle(centerX, centerY, radius)");
+    </script>
+    <script src="draw.js" charset="utf-8"></script>
+</body>
+</html>

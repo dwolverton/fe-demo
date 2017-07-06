@@ -14,6 +14,10 @@
     <title>Demo Site</title>
     <link rel="stylesheet" href="styles.css"/>
     <style>
+        #canvas-wrapper {
+            overflow: hidden;
+            width: 100%;
+        }
         #canvas {
             background-color: white;
         }
@@ -46,36 +50,85 @@
             </ul>
 
             <p id="pos">Hello! This white box is the canvas.</p>
-            <canvas id="canvas" width="800" height="600"
-            style="border:1px solid #c3c3c3;"
-            onclick="document.getElementById('pos').innerHTML = 'X: ' + (event.offsetX - X_CENTER ) + ' Y: ' + (event.offsetY - Y_CENTER) + ' ';">
-            Your browser does not support the canvas element.
-            </canvas>
-
+            <div id="canvas-wrapper">
+                <canvas id="canvas" width="800" height="600"
+                style="border:1px solid #c3c3c3;"
+                onclick="document.getElementById('pos').innerHTML = 'X: ' + displayPixel(event.offsetX - X_CENTER) + ' Y: ' + displayPixel(event.offsetY - Y_CENTER) + ' ';">
+                Your browser does not support the canvas element.
+                </canvas>
+            </div>
         </article>
     </div> <!--/.wrapper-->
 
     <script type="text/javascript">
+        var canvasWrapper = document.getElementById("canvas-wrapper");
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
         ctx.lineWidth = 2;
+        var PIXELS_PER_UNIT = 30;
         var X_CENTER = 400, Y_CENTER = 300;
 
+        function displayPixel(dist) {
+            return (dist / PIXELS_PER_UNIT).toFixed(1);
+        }
+
         function drawRectangle(topX, topY, width, height) {
-            ctx.strokeRect(topX + X_CENTER, topY + Y_CENTER, width, height);
+            ctx.strokeRect(PIXELS_PER_UNIT * topX + X_CENTER, PIXELS_PER_UNIT * topY + Y_CENTER, PIXELS_PER_UNIT * width, PIXELS_PER_UNIT * height);
         }
 
         function drawLine(startX, startY, endX, endY) {
-            ctx.moveTo(startX + X_CENTER, startY + Y_CENTER);
-            ctx.lineTo(endX + X_CENTER, endY + Y_CENTER);
+            ctx.beginPath();
+            ctx.moveTo(PIXELS_PER_UNIT * startX + X_CENTER, PIXELS_PER_UNIT * startY + Y_CENTER);
+            ctx.lineTo(PIXELS_PER_UNIT * endX + X_CENTER, PIXELS_PER_UNIT * endY + Y_CENTER);
             ctx.stroke();
         }
 
         function drawCircle(centerX, centerY, radius) {
             ctx.beginPath();
-            ctx.arc(centerX + X_CENTER, centerY + Y_CENTER, radius, 0, 2 * Math.PI);
+            ctx.arc(PIXELS_PER_UNIT * centerX + X_CENTER, PIXELS_PER_UNIT * centerY + Y_CENTER, PIXELS_PER_UNIT * radius, 0, 2 * Math.PI);
             ctx.stroke();
         }
+
+        function resize() {
+            var width = canvasWrapper.offsetWidth;
+            var height = Math.floor(width * 3 / 4);
+            height = Math.min(height, window.innerHeight - 20);
+            canvas.width = width;
+            canvas.height = height;
+            X_CENTER = width / 2;
+            Y_CENTER = height / 2;
+            clear();
+        }
+
+        function clear() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = "#eee";
+            // ctx.setLineDash([5, 5]);
+
+            var halfWidth = X_CENTER / PIXELS_PER_UNIT;
+            var halfHeight = Y_CENTER / PIXELS_PER_UNIT;
+
+            for (var x = -Math.floor(halfWidth); x <= Math.floor(halfWidth); x++) {
+                drawLine(x, -halfHeight, x, halfHeight);
+            }
+            for (var y = -Math.floor(halfHeight); y <= Math.floor(halfHeight); y++) {
+                drawLine(-halfWidth, y, halfWidth, y);
+            }
+
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#ccc";
+
+            drawLine(0, -halfHeight, 0, halfHeight);
+            drawLine(-halfWidth, 0, halfWidth, 0);
+
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = "#000";
+            // ctx.setLineDash([]);
+        }
+
+        window.addEventListener("load", resize);
+        window.addEventListener("resize", resize);
 
         console.log("Here are the drawing functions you can use...\n\n" +
                     " drawRectangle(topX, topY, width, height)\n" +

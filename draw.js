@@ -5,38 +5,38 @@
 */
 
 function forNoobs() {
-    drawCircle(0, -20, 20);
-    drawRectangle(-5, 0, 10, 30);
+    drawCircle(0, -2, 2);
+    drawRectangle(-.5, 0, 1, 3);
 
-    drawRectangle(-110, 0, 60, 40);
-    drawLine(-118, 4, -80, -25);
-    drawLine(-42, 4, -80, -25);
-    drawRectangle(-78, 15, 15, 25);
+    drawRectangle(-11, 0, 6, 4);
+    drawLine(-11.7, .5, -8, -2.5);
+    drawLine(-4.3, .5, -8, -2.5);
+    drawRectangle(-7.8, 1.5, 1.5, 2.5);
 
-    drawCircle(30, -15, 20);
-    drawRectangle(25, 5, 10, 30);
+    drawCircle(3, -1.5, 2);
+    drawRectangle(2.5, .5, 1, 3);
 
-    drawCircle(-25, -17, 20);
-    drawRectangle(-30, 3, 10, 30);
+    drawCircle(-2.5, -1.7, 2);
+    drawRectangle(-3, .3, 1, 3);
 }
 
 // Versus...
 
 function forDevelopers() {
     drawTree(0, 0);
-    drawHouse(-80, 0);
-    drawTree(30, 5);
-    drawTree(-25, 3);
+    drawHouse(-8, 0);
+    drawTree(3, .5);
+    drawTree(-2.5, .3);
 }
 
 
 function drawTree(x, y) {
-    drawCircle(x, y - 20, 20);
-    drawRectangle(x - 5, y, 10, 30);
+    drawCircle(x, y - 2, 2);
+    drawRectangle(x - .5, y, 1, 3);
 }
 function drawHouse(x,y) {
-    drawRectangle(x - 30, y, 60, 40);
-    drawLine(x - 38, y + 4, x, y - 25);
-    drawLine(x + 38, y + 4, x, y - 25);
-    drawRectangle(x + 2, y + 15, 15, 25);
+    drawRectangle(x - 3, y, 6, 4);
+    drawLine(x - 3.7, y + .5, x, y - 2.5);
+    drawLine(x + 3.7, y + .5, x, y - 2.5);
+    drawRectangle(x + .2, y + 1.5, 1.5, 2.5);
 }

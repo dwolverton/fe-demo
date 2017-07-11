@@ -1,0 +1,41 @@
+/* Styles for jquery.html */
+article div {
+    margin-bottom: 1em;
+}
+.intro {
+    font-style: italic;
+}
+.intro:first-letter {
+    font-size: 200%;
+}
+.boxes {
+    clear: both;
+}
+.box {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    border: 2px solid black;
+    background-color: #8ed3da;
+    margin: 20px 0 0 20px;
+    text-align: center;
+    font-size: 300%;
+    line-height: 150px;
+}
+#grant-image {
+    float: right;
+    position: relative;
+    margin: 0 0 8px 8px;
+    padding: 4px;
+    border: 2px solid black;
+}
+#grant-image img {
+    vertical-align: bottom; /* Fixes a weird gap below images. */
+}
+#grant-image figcaption {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    background-color: rgba(255, 255, 255, .8);
+    padding: 3px 6px;
+}

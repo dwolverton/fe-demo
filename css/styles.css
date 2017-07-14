@@ -156,7 +156,7 @@ a.card {
 }
 
 @media (min-width: 1500px) {
-    html .cards .card {
+    .cards .card {
         width: 22.5%; /* 4 columns */
     }
 }

@@ -28,6 +28,6 @@
   { "name": "John von Neumann", "invented": "modern computer", "year": 1945 },
   { "name": "William Shockley", "invented": "transistor", "year": 1947 },
   { "name": "James Gosling", "invented": "Java", "year": 1995 },
-  { "name": "Brendan Eich", "invented": "JavaScript", "year": 1995 },
+  { "name": "Brendan Eich", "invented": "JavaScript", "year": 1995 }
 ]
 }

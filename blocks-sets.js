@@ -8,8 +8,12 @@ angular.module("blocks")
             introWithColor,
             simpleFor,
             forStack,
+            triangle,
+            sawTooth,
+            biLevel,
             nestedFor,
-            biLevel
+            rainbow,
+            rainbowNoBreak
         ]
     }
 });
@@ -36,6 +40,29 @@ function forStack(addBlock) {
     }
 }
 
+function triangle(addBlock) {
+    for (var i = 0; i < 6; i++) {
+        buildToHeight(i, i + 1);
+    }
+
+    function buildToHeight(stack, height) {
+        for (var i = 0; i < height; i++) {
+            addBlock(stack);
+        }
+    }
+}
+function sawTooth(addBlock) {
+    for (var i = 0; i < 6; i++) {
+        buildToHeight(i, i % 3 + 1);
+    }
+
+    function buildToHeight(stack, height) {
+        for (var i = 0; i < height; i++) {
+            addBlock(stack);
+        }
+    }
+}
+
 function nestedFor(addBlock) {
     for (var i = 0; i < 6; i++) {
         for (var j = 0; j < i + 1; j++) {
@@ -46,9 +73,57 @@ function nestedFor(addBlock) {
 
 function biLevel(addBlock) {
     for (var i = 0; i < 6; i++) {
+        if (i < 3) {
+            buildToHeight(i, 1);
+        } else {
+            buildToHeight(i, 2);
+        }
+    }
+
+    function buildToHeight(stack, height) {
+        for (var i = 0; i < height; i++) {
+            addBlock(stack);
+        }
+    }
+}
+
+function rainbow(addBlock) {
+    for (var i = 0; i < 6; i++) {
+        switch(i) {
+            case 0: addBlock(i, "red"); break;
+            case 1: addBlock(i, "orange"); break;
+            case 2: addBlock(i, "yellow"); break;
+            case 3: addBlock(i, "green"); break;
+            case 4: addBlock(i, "blue"); break;
+            case 5: addBlock(i, "purple"); break;
+        }
+
+    }
+}
+
+function rainbowNoBreak(addBlock) {
+    for (var i = 0; i < 6; i++) {
+        switch(i) {
+            case 0: addBlock(i, "red");
+            case 1: addBlock(i, "orange");
+            case 2: addBlock(i, "yellow");
+            case 3: addBlock(i, "green");
+            case 4: addBlock(i, "blue");
+            case 5: addBlock(i, "purple");
+        }
+
+    }
+}
+
+function biLevelFunction(addBlock) {
+    for (var i = 0; i < 6; i++) {
         var height = getHeight(i);
-        for (var j = 0; j < height; j++) {
-            addBlock(i);
+        buildToHeight(i, height);
+    }
+
+    function buildToHeight(stack, height) {
+        for (var i = 0; i < height; i++) {
+            addBlock(stack);
         }
     }
 

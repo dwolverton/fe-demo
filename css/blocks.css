@@ -8,9 +8,28 @@ header {
     align-items: flex-start;
 }
 
-.code {
+button {
+    border-radius: 4px;
+    background-color: white;
+    border: 1px #eee outset;
+}
+
+.challengeNumbers button {
+    margin: 0 1px;
+}
+
+header button.current {
+    background-color: #8ac5ff;
+    margin-bottom: 15px;
+}
+
+.code-area {
     float: left;
     margin-right: 2em;
+}
+
+.code {
+    font-size: 150%;
 }
 
 .solution {
@@ -47,4 +66,8 @@ header {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.links {
+    margin-bottom: 15px;
 }

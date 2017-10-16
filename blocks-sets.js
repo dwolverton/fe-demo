@@ -1,17 +1,41 @@
 (function(){
 angular.module("blocks")
 .service("sets", function() {
-    this["basic-with-solutions"] = {
+    this["intro"] = {
         showSolutions: true,
         challenges: [
             intro,
-            introWithColor,
+            introWithColor
+        ]
+    }
+    this["loops"] = {
+        showSolutions: true,
+        challenges: [
             simpleFor,
             forStack,
+            twoLoops,
+            twoLoops2,
+            whileCountDown,
+            whileDouble,
+            whileCount,
             triangle,
             sawTooth,
-            biLevel,
             nestedFor,
+            fib
+        ]
+    }
+    this["functions"] = {
+        showSolutions: true,
+        challenges: [
+            fib,
+            biLevel,
+            biLevelFunction
+        ]
+    }
+    this["misc"] = {
+        showSolutions: true,
+        challenges: [
+            biLevel,
             rainbow,
             rainbowNoBreak
         ]
@@ -40,9 +64,52 @@ function forStack(addBlock) {
     }
 }
 
+function twoLoops(addBlock) {
+    for (var i = 0; i < 3; i++) {
+        addBlock(i, "red");
+    }
+    for (var i = 2; i < 5; i++) {
+        addBlock(i, "blue");
+    }
+}
+
+function twoLoops2(addBlock) {
+    for (var i = 1; i <= 4; i++) {
+        addBlock(i, "red");
+    }
+    for (var i = 2; i < 4; i++) {
+        addBlock(i, "blue");
+    }
+}
+
+function whileCountDown(addBlock) {
+    var number = 4;
+    while(number > 0) {
+        addBlock(0);
+        number--;
+    }
+}
+
+function whileDouble(addBlock) {
+    var number = 1;
+    while(number < 20) {
+        addBlock(0);
+        number *= 2;
+    }
+}
+
+function whileCount(addBlock) {
+    var blocksPlaced = 0;
+    while(blocksPlaced <= 3) {
+        addBlock(3);
+        blocksPlaced++;
+    }
+}
+
 function triangle(addBlock) {
     for (var i = 0; i < 6; i++) {
-        buildToHeight(i, i + 1);
+        var height = i + 1;
+        buildToHeight(i, height);
     }
 
     function buildToHeight(stack, height) {
@@ -54,6 +121,23 @@ function triangle(addBlock) {
 function sawTooth(addBlock) {
     for (var i = 0; i < 6; i++) {
         buildToHeight(i, i % 3 + 1);
+    }
+
+    function buildToHeight(stack, height) {
+        for (var i = 0; i < height; i++) {
+            addBlock(stack);
+        }
+    }
+}
+
+function fib(addBlock) {
+    var prevCount = 0;
+    var count = 1;
+    for (var i = 0; i < 6; i++) {
+        buildToHeight(i, count);
+        var next = count + prevCount;
+        prevCount = count;
+        count = next;
     }
 
     function buildToHeight(stack, height) {
@@ -97,7 +181,6 @@ function rainbow(addBlock) {
             case 4: addBlock(i, "blue"); break;
             case 5: addBlock(i, "purple"); break;
         }
-
     }
 }
 
@@ -111,7 +194,6 @@ function rainbowNoBreak(addBlock) {
             case 4: addBlock(i, "blue");
             case 5: addBlock(i, "purple");
         }
-
     }
 }
 

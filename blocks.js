@@ -9,7 +9,9 @@ angular.module("blocks", ["ngRoute"])
         template:
         '<header>\
             <button class="prev-button" ng-click="vm.prev()" ng-disabled="!vm.hasPrev()">Previous</button>\
-            <h2>Challenge {{vm.challengeNum}} of {{vm.challengeCount}}</h2>\
+            <div class="challengeNumbers">\
+                <button ng-repeat="challenge in vm.challenges" ng-class="{current: $index === vm.challengeNum - 1}" ng-click="vm.goTo($index)">{{$index + 1}}</button>\
+            </div>\
             <button class="prev-button" ng-click="vm.next()" ng-disabled="!vm.hasNext()">Next</button>\
         </header>\
         <challenge challenge="vm.challenge" allow-see-solution="true"></challenge>',
@@ -22,6 +24,7 @@ angular.module("blocks", ["ngRoute"])
     var set = sets[$routeParams.set];
     var challengeNum = parseInt($routeParams.challengeNum) || 0;
 
+    vm.challenges = set.challenges;
     vm.challenge = set.challenges[challengeNum];
     vm.challengeNum = challengeNum + 1;
     vm.challengeCount = set.challenges.length;
@@ -38,7 +41,7 @@ angular.module("blocks", ["ngRoute"])
         goTo(challengeNum + 1);
     }
 
-    function goTo(num) {
+    vm.goTo = function goTo(num) {
         $location.path("/" + $routeParams.set + "/" + num);
     }
 })
@@ -47,9 +50,11 @@ angular.module("blocks", ["ngRoute"])
     controllerAs: "vm",
     template:
     '<div class="challenge">\
-        <pre class="code"><code>{{vm.challengeToCode(vm.challenge)}}</code></pre>\
+        <div class="code-area">\
+            <pre class="code"><code>{{vm.challengeToCode(vm.challenge)}}</code></pre>\
+            <button ng-if="vm.allowSeeSolution && !vm.isShowSolution" ng-click="vm.showSolution()" type="button">Show Solution</button>\
+        </div>\
         <solution ng-if="vm.isShowSolution" challenge="vm.challenge" delay="150"></solution>\
-        <button ng-if="vm.allowSeeSolution && !vm.isShowSolution" ng-click="vm.showSolution()" type="button">Show Solution</button>\
     </div>',
     controller: function(challengeToCode) {
         var vm = this;

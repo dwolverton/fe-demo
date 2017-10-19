@@ -3,9 +3,12 @@ body {
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    text-align: center;
+}
+
+.challengeNumbers {
+    display: inline;
+    margin: 0 5px;
 }
 
 button {

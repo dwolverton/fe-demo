@@ -5,7 +5,12 @@ angular.module("blocks")
         showSolutions: true,
         challenges: [
             intro,
-            introWithColor
+            introWithColor,
+            math,
+            mathDivide,
+            tempMid,
+            tempLow,
+            tempHigh
         ]
     }
     this["loops"] = {
@@ -13,14 +18,15 @@ angular.module("blocks")
         challenges: [
             simpleFor,
             forStack,
-            twoLoops,
-            twoLoops2,
-            whileCountDown,
-            whileDouble,
             whileCount,
+            twoLoops,
+            whileCountDown,
+            twoLoops2,
+            forSkip,
+            whileDouble,
+            nestedFor,
             triangle,
             sawTooth,
-            nestedFor,
             fib
         ]
     }
@@ -35,7 +41,10 @@ angular.module("blocks")
     this["misc"] = {
         showSolutions: true,
         challenges: [
+            splitColor,
+            alternateColor,
             biLevel,
+            mixColor,
             rainbow,
             rainbowNoBreak
         ]
@@ -53,11 +62,68 @@ function introWithColor(addBlock) {
     addBlock(3, "blue");
 }
 
+function math(addBlock) {
+    var stack = 0;
+    addBlock(stack);
+    stack += 2;
+    addBlock(stack);
+    stack += stack;
+    addBlock(stack);
+    stack = 5 - 2;
+    addBlock(stack);
+}
+
+function mathDivide(addBlock) {
+    var stack = 4;
+    addBlock(stack);
+    stack /= 2;
+    addBlock(stack);
+    stack /= 2;
+    addBlock(stack);
+}
+
+function tempMid(addBlock) {
+    var temp = 75;
+
+    if (temp >= 80) {
+        addBlock(4);
+    } else if (temp > 70){
+        addBlock(2);
+    } else {
+        addBlock(0);
+    }
+}
+
+function tempLow(addBlock) {
+    var temp = 60;
+
+    if (temp >= 80) {
+        addBlock(4);
+    } else if (temp > 70){
+        addBlock(2);
+    } else {
+        addBlock(0);
+    }
+}
+
+function tempHigh(addBlock) {
+    var temp = 90;
+
+    if (temp >= 80) {
+        addBlock(4);
+    } else if (temp > 70){
+        addBlock(2);
+    } else {
+        addBlock(0);
+    }
+}
+
 function simpleFor(addBlock) {
     for (var i = 0; i < 6; i++) {
         addBlock(i);
     }
 }
+
 function forStack(addBlock) {
     for (var i = 0; i < 4; i++) {
         addBlock(2);
@@ -79,6 +145,12 @@ function twoLoops2(addBlock) {
     }
     for (var i = 2; i < 4; i++) {
         addBlock(i, "blue");
+    }
+}
+
+function forSkip(addBlock) {
+    for (var i = 1; i < 6; i += 2) {
+        addBlock(i);
     }
 }
 
@@ -214,6 +286,46 @@ function biLevelFunction(addBlock) {
             return 1;
         } else {
             return 2;
+        }
+    }
+}
+
+function splitColor(addBlock) {
+    for (var i = 0; i < 6; i++) {
+        if (i <= 2) {
+            addBlock(i, "red");
+        } else {
+            addBlock(i, "yellow");
+        }
+    }
+}
+
+function alternateColor(addBlock) {
+    for (var i = 0; i < 6; i++) {
+        if (i % 2 === 0) {
+            addBlock(i, "red");
+        } else {
+            addBlock(i, "blue");
+        }
+    }
+}
+
+function mixColor(addBlock) {
+    for (var i = 0; i < 6; i++) {
+        if (i <= 2) {
+            addBlock(i, "yellow");
+        } else {
+            addBlock(i, "black");
+        }
+
+        if (i % 3 === 0) {
+            addBlock(i, "red");
+        } else {
+            addBlock(i, "blue");
+        }
+
+        if (i % 2 == 0) {
+            addBlock(i);
         }
     }
 }

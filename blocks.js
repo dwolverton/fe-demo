@@ -35,13 +35,13 @@ angular.module("blocks", ["ngRoute"])
         return challengeNum < set.challenges.length - 1;
     }
     vm.prev = function() {
-        goTo(challengeNum - 1);
+        vm.goTo(challengeNum - 1);
     }
     vm.next = function() {
-        goTo(challengeNum + 1);
+        vm.goTo(challengeNum + 1);
     }
 
-    vm.goTo = function goTo(num) {
+    vm.goTo = function(num) {
         $location.path("/" + $routeParams.set + "/" + num);
     }
 })

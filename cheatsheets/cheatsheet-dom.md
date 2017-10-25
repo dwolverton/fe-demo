@@ -25,6 +25,7 @@ Set
 ```js
 el.setAttribute("href", "http://example.com");
 el.innerHTML = "Hello <em>World</em>!";
+el.textContent = "Hello World";
 inputEl.value = "Some Value"; // Set value of a input element
 inputEl.value = ""; // Clear an input element
 el.style.backgroundColor = "red"; // individual CSS property (use camel case)
@@ -35,6 +36,7 @@ Get
 ```js
 var type = el.getAttribute("type");
 var html = el.innerHTML;
+var text = el.textContent;
 var value = inputEl.value; // get what the user typed into an input
 ```
 

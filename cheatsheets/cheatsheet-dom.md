@@ -29,9 +29,9 @@ el.textContent = "Hello World";
 inputEl.value = "Some Value"; // Set value of a input element
 inputEl.value = ""; // Clear an input element
 el.style.backgroundColor = "red"; // individual CSS property (use camel case)
-el.className = "some-class";
-el.classList.add("some-class");
-el.classList.remove("some-class");
+el.className = "some-class"; // set class attribute
+el.classList.add("some-class"); // add a CSS class
+el.classList.remove("some-class"); // remove a CSS class
 ```
 
 Get

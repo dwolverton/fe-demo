@@ -20,13 +20,17 @@
   { "firstName": "William", "lastName": "Shockley", "innovation": "invented transistor w/ Bell Labs team", "year": 1947 },
   { "firstName": "Misko", "lastName": "Hevery", "innovation": "invented AngularJS", "year": 2009 },
   { "firstName": "Adam", "lastName": "Abrons", "innovation": "invented AngularJS", "year": 2009 },
-  { "firstName": "Ryan", "lastName": "Dahl", "innovation": "invented Node.js", "year": 2009 }
+  { "firstName": "Ryan", "lastName": "Dahl", "innovation": "invented Node.js", "year": 2009 },
+  { "firstName": "Edgar", "lastName": "Codd", "innovation": "invented relational database", "year": 1970 },
+  { "firstName": "Donald", "lastName": "Chamberlin", "innovation": "developed SQL", "year": 1979 },
+  { "firstName": "Raymond", "lastName": "Boyce", "innovation": "developed SQL", "year": 1979 }
 ],
 "tiny": [
   { "name": "Charles Babbage", "invented": "mechanical computer", "year": 1837 },
   { "name": "Ada Lovelace", "invented": "programming", "year": 1843 },
   { "name": "John von Neumann", "invented": "modern computer", "year": 1945 },
   { "name": "William Shockley", "invented": "transistor", "year": 1947 },
+  { "name": "Edgar \"Ted\" Codd", "invented": "relational (SQL) database", "year": 1970 },
   { "name": "James Gosling", "invented": "Java", "year": 1995 },
   { "name": "Brendan Eich", "invented": "JavaScript", "year": 1995 }
 ]

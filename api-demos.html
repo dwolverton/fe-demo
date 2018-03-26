@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>API - Hall of Fame</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <style>
+        li {
+            margin-bottom: 4px;
+        }
+
+        #weather-section img {
+            float: left;
+            margin: 0 1em 1em 0;
+        }
+
+        section {
+            margin-bottom: 2em;
+        }
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">David's Demo</div>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <h1>API Demos</h1>
+        <article class="content">
+            <h2>Computing Hall of Fame Highlights</h2>
+            <section id="hall-of-fame-section">
+                <p class="url"><a href="https://dwolverton.github.io/fe-demo/data/computer-science-hall-of-fame.json">https://dwolverton.github.io/fe-demo/data/computer-science-hall-of-fame.json</a></p>
+                <ul id="hall-of-fame-list">
+                </ul>
+            </section>
+
+            <h2>Weather</h2>
+            <section id="weather-section">
+                <p class="url"><a href="https://forecast.weather.gov/MapClick.php?lat=42.335993&amp;lon=-83.049806&amp;FcstType=json">https://forecast.weather.gov/MapClick.php?lat=42.335993&amp;lon=-83.049806&amp;FcstType=json</a></p>
+            </section>
+
+            <h2>Star Wars Characters</h2>
+            <section id="starwars-section">
+                <p class="url"><a href="https://swapi.co/api/people">https://swapi.co/api/people</a></p>
+                <ul id="starwars-list">
+                </ul>
+            </section>
+        </article>
+    </div> <!--/.wrapper-->
+    <script src="libs/jquery-3.1.1.min.js"></script>
+    <script src="api-demos.js"></script>
+</body>
+</html>

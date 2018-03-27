@@ -1,8 +1,7 @@
 angular.module("requestResponse", [])
 .component("request", {
     template: `<section class="request">
-        <h3>URL</h3>
-        <p><label>URL</label> {{$ctrl.url}}</p>
+        <h3><label>URL</label> {{$ctrl.url}}</h3>
         <div class="url-section">
             <p><label>Protocol</label> <select ng-model="$ctrl.protocol" ng-change="$ctrl.rebuildUrl()">
                 <option value="http">HTTP</option>

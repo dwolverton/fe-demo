@@ -8,6 +8,7 @@ angular.module("requestResponse", [])
                 <option value="https">HTTPS</option>
             </select></p>
             <p><label>Host (Domain Name or IP)</label> <input ng-model="$ctrl.host" ng-change="$ctrl.rebuildUrl()"/></p>
+            <p><label>Port</label> <input type="number" ng-model="$ctrl.port" ng-change="$ctrl.rebuildUrl()"/></p>
             <p><label>Path</label> <input ng-model="$ctrl.path" ng-change="$ctrl.rebuildUrl()"/></p>
             <h4>Parameters</h4>
             <p ng-repeat="param in $ctrl.parameters" class="name-value">
@@ -26,7 +27,7 @@ angular.module("requestResponse", [])
         </select></p>
 
         <h3>Body</h3>
-        <p><textarea ng-mdoel="$ctrl.body"></textarea></p>
+        <p><textarea ng-mdoel="$ctrl.body" ng-disabled="$ctrl.isBodyDisabled()"></textarea></p>
 
         <headers defaults="[{name: 'Accepts', value: 'application/json'}]"></headers>
     </section>`,
@@ -34,6 +35,7 @@ angular.module("requestResponse", [])
         var ctrl = this;
         ctrl.protocol = "http";
         ctrl.host = "server-address";
+        ctrl.port = null;
         ctrl.path = "/";
         ctrl.parameters = [
             { name: "", value: ""}
@@ -42,7 +44,8 @@ angular.module("requestResponse", [])
         ctrl.body = "";
 
         ctrl.rebuildUrl = function() {
-            ctrl.url = ctrl.protocol + "://" + ctrl.host + ctrl.path;
+            var port = (typeof ctrl.port === "number" && ctrl.port >= 0) ? ":" + ctrl.port : "";
+            ctrl.url = ctrl.protocol + "://" + ctrl.host + port + ctrl.path;
             var params = {};
             ctrl.parameters.filter(p => p.name).forEach(p => {
                 params[p.name] = p.value;
@@ -55,6 +58,9 @@ angular.module("requestResponse", [])
         ctrl.addParam = function() {
             ctrl.parameters.push({ name: "", value: "" });
         };
+        ctrl.isBodyDisabled = function() {
+            return ctrl.method === "GET" || ctrl.method === "DELETE";
+        }
 
         ctrl.rebuildUrl();
     }

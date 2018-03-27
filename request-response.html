@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Request / Response</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <style>
+        label {
+            display: inline-block;
+            font-weight: bold;
+            width: 7em;
+        }
+
+        .request, .response {
+            border: 2px solid #ddd;
+            padding: 1em;
+        }
+
+        .url-section {
+            border: 2px solid #ddd;
+            padding: 1em;
+            margin: 1em;
+        }
+
+        input, select, textarea {
+            font-size: 120%;
+            font-family: monospace;
+        }
+
+        textarea {
+            width: 100%;
+            height: 7em;
+        }
+
+        .name-value label {
+            width: auto;
+            margin-right: 1em;
+            margin-left: 4em;
+        }
+        .name-value label:first-child {
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body ng-app="requestResponse">
+    <header>
+        <div class="logo">David's Demo</div>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <h1>HTTP Request / Response</h1>
+        <article class="content">
+            <h2>Request</h2>
+            <request></request>
+
+            <h2>Response</h2>
+            <response></response>
+        </article>
+    </div> <!--/.wrapper-->
+    <script src="libs/angular.min.js"></script>
+    <script src="request-response.js"></script>
+</body>
+</html>

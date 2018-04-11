@@ -1,0 +1,6 @@
+[
+    { "title": "Cat", "image": "https://dwolverton.github.io/fe-demo/data/images/cat.png" },
+    { "title": "Dog", "image": "https://dwolverton.github.io/fe-demo/data/images/dog.png" },
+    { "title": "Bunny", "image": "https://dwolverton.github.io/fe-demo/data/images/rabbit.png" },
+    { "title": "Parrot", "image": "https://dwolverton.github.io/fe-demo/data/images/parrot.png" }
+]

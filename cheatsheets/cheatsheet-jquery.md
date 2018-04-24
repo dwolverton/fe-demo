@@ -3,7 +3,7 @@ How to use jQuery to manipulate the DOM.
 
 ### Find Elements on the Page
 ```js
-var elements = $("some .css.selector");
+let elements = $("some .css.selector");
 ```
 
 ### Modify an Element
@@ -21,16 +21,16 @@ inputEl.val(""); // Clear an input element
 Get
 
 ```js
-var type = el.attr("type");
-var html = el.html();
-var text = el.text();
-var value = inputEl.val(); // get what the user typed into an input
+let type = el.attr("type");
+let html = el.html();
+let text = el.text();
+let value = inputEl.val(); // get what the user typed into an input
 ```
 
 ### Create an Element
 ```js
 // Step 1: Create a basic element.
-var el = $("<a>");
+let el = $("<a>");
 // Step 2: Set appropriate content and attributes.
 el.text("Click Me");
 el.attr("href", "http://example.com");
@@ -42,7 +42,7 @@ or
 
 ```js
 // Step 1: Create a fully formed element.
-var el = $('<a href="http://example.com">Click Me</a>');
+let el = $('<a href="http://example.com">Click Me</a>');
 // Step 2: Add the element to the page at the appropriate location.
 parentEl.append(el);
 ```
@@ -55,8 +55,7 @@ parentEl.append('<a href="http://example.com">Click Me</a>');
 
 ### Listen for an Event
 ```js
-el.on("click", function(event) {
+el.on("click", (event) => {
     // Code here runs every time the element is clicked.
-    this; // optionally use this to access the element that was clicked.
 });
 ```

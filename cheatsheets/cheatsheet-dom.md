@@ -5,18 +5,18 @@ Basic straight JavaScript DOM stuff.
 Returns one element:
 
 ```js
-var el = document.getElementById("some-id"); // Don't use '#'
-var el = document.querySelector("some .css.selector");
-var parent = el.parentElement;
+let el = document.getElementById("some-id"); // Don't use '#'
+let el = document.querySelector("some .css.selector");
+let parent = el.parentElement;
 ```
 
 Returns a NodeList (like an array) of elements:
 
 ```js
-var els = document.getElementsByClassName("some-class"); // Don't use '.'
-var divs = document.getElementsByTagName("div");
-var els = document.querySelectorAll("some .css.selector");
-var children = el.childElements;
+let els = document.getElementsByClassName("some-class"); // Don't use '.'
+let divs = document.getElementsByTagName("div");
+let els = document.querySelectorAll("some .css.selector");
+let children = el.childElements;
 ```
 
 ### Modify an Element
@@ -25,28 +25,23 @@ Set
 ```js
 el.setAttribute("href", "http://example.com");
 el.innerHTML = "Hello <em>World</em>!";
-el.textContent = "Hello World";
 inputEl.value = "Some Value"; // Set value of a input element
 inputEl.value = ""; // Clear an input element
 el.style.backgroundColor = "red"; // individual CSS property (use camel case)
-el.className = "some-class"; // set class attribute
-el.classList.add("some-class"); // add a CSS class
-el.classList.remove("some-class"); // remove a CSS class
 ```
 
 Get
 
 ```js
-var type = el.getAttribute("type");
-var html = el.innerHTML;
-var text = el.textContent;
-var value = inputEl.value; // get what the user typed into an input
+let type = el.getAttribute("type");
+let html = el.innerHTML;
+let value = inputEl.value; // get what the user typed into an input
 ```
 
 ### Create an Element
 ```js
 // Step 1: Create a basic element.
-var el = document.createElement("a");
+let el = document.createElement("a");
 // Step 2: Set appropriate content and attributes.
 el.innerHTML = "Click Me";
 el.setAttribute("href", "http://example.com");
@@ -56,9 +51,9 @@ parentEl.appendChild(el);
 
 ### Listen for an Event
 ```js
-el.onclick = function(event) {
+el.addEventListener("click", (event) => {
     // Code here runs every time the element is clicked.
-}
+});
 ```
 
 or in HTML

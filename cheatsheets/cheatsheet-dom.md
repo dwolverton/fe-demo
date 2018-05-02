@@ -25,8 +25,11 @@ Set
 ```js
 el.setAttribute("href", "http://example.com");
 el.innerHTML = "Hello <em>World</em>!";
+el.innerText = "Hello World"; // you'll also see el.textContent = "Hello World";
 inputEl.value = "Some Value"; // Set value of a input element
 inputEl.value = ""; // Clear an input element
+el.classList.add("some-class"); // Adds a class
+el.classList.remove("some-class"); // Removes a class
 el.style.backgroundColor = "red"; // individual CSS property (use camel case)
 ```
 

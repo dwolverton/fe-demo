@@ -23,7 +23,10 @@
   { "firstName": "Ryan", "lastName": "Dahl", "innovation": "invented Node.js", "year": 2009 },
   { "firstName": "Edgar", "lastName": "Codd", "innovation": "invented relational database", "year": 1970 },
   { "firstName": "Donald", "lastName": "Chamberlin", "innovation": "developed SQL", "year": 1979 },
-  { "firstName": "Raymond", "lastName": "Boyce", "innovation": "developed SQL", "year": 1979 }
+  { "firstName": "Raymond", "lastName": "Boyce", "innovation": "developed SQL", "year": 1979 },
+  { "firstName": "Brian", "lastName": "Kernighan", "innovation": "invented C", "year": 1978 },
+  { "firstName": "Dennis", "lastName": "Ritchie", "innovation": "invented C", "year": 1978 },
+  { "firstName": "Bjarne", "lastName": "Stroustrup", "innovation": "invented C++", "year": 1985 }
 ],
 "tiny": [
   { "name": "Charles Babbage", "invented": "mechanical computer", "year": 1837 },

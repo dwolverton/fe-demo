@@ -1,22 +1,22 @@
 # DOM Cheat Sheet
-Basic straight JavaScript DOM stuff.
+Basic pure JavaScript DOM stuff.
 
 ### Find Elements on the Page
 Returns one element:
 
 ```js
-let el = document.getElementById("some-id"); // Don't use '#'
-let el = document.querySelector("some .css.selector");
-let parent = el.parentElement;
+var el = document.getElementById("some-id"); // Don't use '#'
+var el = document.querySelector("some .css.selector");
+var parent = el.parentElement;
 ```
 
 Returns a NodeList (like an array) of elements:
 
 ```js
-let els = document.getElementsByClassName("some-class"); // Don't use '.'
-let divs = document.getElementsByTagName("div");
-let els = document.querySelectorAll("some .css.selector");
-let children = el.childElements;
+var els = document.getElementsByClassName("some-class"); // Don't use '.'
+var divs = document.getElementsByTagName("div");
+var els = document.querySelectorAll("some .css.selector");
+var children = el.childElements;
 ```
 
 ### Modify an Element
@@ -36,15 +36,15 @@ el.style.backgroundColor = "red"; // individual CSS property (use camel case)
 Get
 
 ```js
-let type = el.getAttribute("type");
-let html = el.innerHTML;
-let value = inputEl.value; // get what the user typed into an input
+var type = el.getAttribute("type");
+var html = el.innerHTML;
+var value = inputEl.value; // get what the user typed into an input
 ```
 
 ### Create an Element
 ```js
 // Step 1: Create a basic element.
-let el = document.createElement("a");
+var el = document.createElement("a");
 // Step 2: Set appropriate content and attributes.
 el.innerHTML = "Click Me";
 el.setAttribute("href", "http://example.com");
@@ -62,7 +62,7 @@ existingEl.insertAdjacentHTML("afterend", "<p>Some HTML</p>");
 
 ### Listen for an Event
 ```js
-el.addEventListener("click", (event) => {
+el.addEventListener("click", function(event) {
     // Code here runs every time the element is clicked.
 });
 ```

@@ -54,12 +54,12 @@ Please commit your changes or stash them before you merge.
 ```bash
 git stash
 git pull
-git stash apply
+git stash pop
 ```
 No commit required.
 
 -----
-#### _When you pull or unstash (stash apply) and someone has changed the same file, but a different line._
+#### _When you pull or unstash (stash pop) and someone has changed the same file, but a different line._
 
 ```plain
 Auto-merging script.js
@@ -93,7 +93,7 @@ Open the files listed with merge conflicts. Find the places that look like the f
 Before long you should add, commit and perhaps push these fixes. But don't forget to test.
 
 -----
-#### _When you unstash (stash apply) and someone has changed the same line._
+#### _When you unstash (stash pop) and someone has changed the same line._
 
 ```plain
 CONFLICT (content): Merge conflict in script.js

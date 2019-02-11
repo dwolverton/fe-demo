@@ -10,7 +10,7 @@ var el = document.querySelector("some .css.selector");
 var parent = el.parentElement;
 ```
 
-Returns a NodeList or HTMLCollection (both like an array) of elements:
+Returns a [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) or [HTMLCollection](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection) (both like an array) of elements:
 
 ```js
 var els = document.getElementsByClassName("some-class"); // Don't use '.'

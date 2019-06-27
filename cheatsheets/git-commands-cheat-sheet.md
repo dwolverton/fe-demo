@@ -1,31 +1,21 @@
 # Git Commands Cheat Sheet
 
-### Upload a new lab
+### Upload a new project
 
-1. Add a `.gitignore` file to the project at the root level. (Use the "Navigator" view in Eclipse to see hidden files like `.gitignore`.) Here's what should be in that file:
-
-   ```
-   bin
-   *.class
-   .project
-   .classpath
-   .settings
-   ```
-
-2. On the command line...
+1. On the command line...
 
    1. `cd` into the lab folder.
    2. `git init` to initialize the local Git repository. Only do this one time per project!
    3. `git add .` to add all the files in the project to the staging area. Or `git add <file/folder>` to add a specific file or folder. Include the name or path of the file or folder. Do not include the angle brackets (<, >).
    4. `git commit -m 'initial commit'` to make the first commit.
 
-3. On GitHub.com, log in and create a new repository. Give it a name, such as "Lab2", and leave all the other options as they are.
+2. On GitHub.com, log in and create a new repository. Give it a name, such as "Lab2", and leave all the other options as they are.
 
-4. Copy both lines under "…or push an existing repository from the command line" on GitHub, paste them on the command line, and press ENTER.
+3. Copy both lines under "…or push an existing repository from the command line" on GitHub, paste them on the command line, and press ENTER.
 
-5. Refresh the GitHub page to verify that your files have been copied up.
+4. Refresh the GitHub page to verify that your files have been copied up.
 
-### Add changes to an existing lab
+### Add changes to an existing project
 
 On the command line...
 

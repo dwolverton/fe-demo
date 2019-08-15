@@ -3,7 +3,7 @@
 ### 1. CREATE & DOWNLOAD FROM START.SPRING.IO
 * Browse to [https://start.spring.io](https://start.spring.io)
 * For WAR...
-  * Click the "Switch to full version" link at the bottom.
+  * Expand "Options".
   * Change Packaging from Jar to War.
 * Enter a group name, e.g. co.grandcircus
 * Enter an artifact name, e.g. spring-lab

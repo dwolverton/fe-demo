@@ -23,7 +23,7 @@
         section.append('<p>' + text + '</p>');        
     });
 
-    $.get("https://swapi.co/api/people").then(function(data) {
+    $.get("https://swapi.dev/api/people").then(function(data) {
         var list = $("#starwars-list");
 
         data.results.forEach(function(person) {

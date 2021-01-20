@@ -1,5 +1,5 @@
 (function() {
-    $.get("data/computer-science-hall-of-fame.json").then(function(data) {
+    $.get("https://grandcircusco.github.io/demo-apis/computer-science-hall-of-fame.json").then(function(data) {
         var list = $("#hall-of-fame-list");
 
         data.tiny.forEach(function(entry) {
